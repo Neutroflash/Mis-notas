@@ -1,10 +1,12 @@
-const notes = [
-  { body: "Note 1" },
-  { body: "Note 2" },
-  { body: "Note 3" },
-  { body: "Note 4" },
+const storedNotes = JSON.parse(localStorage.getItem('notas'));
+const defaultNotes = [
+  { body: "Mi Primera Nota" },
+  { body: "Esta es una nota larga que ocupa más de una línea" },
+  { body: "Otra nota de ejemplo" },
+  { body: "Última nota de ejemplo" },
 ];
-  
+let notes = storedNotes.length ? storedNotes : defaultNotes.slice();
+
 function startNote(note) {
   const div = document.createElement("div");
   div.className = "note";
@@ -16,8 +18,8 @@ function startNote(note) {
   button.textContent = "Delete";
 
   function handleClick() {
-    deleteNote(notes);
-    showNotes(notes);
+    deleteNote(note);
+    showNotes();
   }
   button.addEventListener('click', handleClick);
   
@@ -40,11 +42,12 @@ function showNotes() {
 function deleteNote(note) {
   const noteIndex = notes.indexOf(note);
   notes.splice(noteIndex, 1);
-  showNotes();
+  savedData();
 }
   
 function createNote(body) {
   notes.push({ body });
+  savedData();
 }
   
 function noteSubmit(event) {
@@ -54,6 +57,10 @@ function noteSubmit(event) {
   createNote(body);
   showNotes();
   form.reset();
+}
+
+function savedData() {
+  localStorage.setItem('notas', JSON.stringify(notes));
 }
   
 const form = document.querySelector("form");
