@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px
+}
+
+.topBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerTop h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.textInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+#note {
+    border: 3px solid #4F4F4F;
+    border-radius: 16px;
+    height: 100px;
+    color: rgb(148, 148, 148);
+    font-size: 18px;
+}
+
+.note {
+    border-radius: 16px;
+    border: 2px solid #4F4F4F;
+    padding: 16px;
+    background-color: white;
+    flex-basis: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.note p {
+    width: 100%;
+}
+
+.note button {
+    border: none;
+    padding: 4px 8px;
+    border-radius: 16px;
+    color: #4F4F4F;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
+
+.textInput button {
+    border: 1px solid #4F4F4F;
+    border-radius: 16px;
+    padding: 8px 16px;
+    background-color: #4F4F4F;
+    color: white;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.bottomBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 800px;
+    gap: 20px;
+   
+}
+
+.showNote {
+    border-radius: 16px;
+    border: 2px solid #4F4F4F;
+    padding: 16px;
+    background-color: white;
+    flex-basis: 300px;
+    gap: 16px;
+}
+
+.showCard button {
+    border: none;
+    padding: 4px 8px;
+    border-radius: 16px;
+    color: #4F4F4F;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
+
+@media (max-width: 680px) {
+    .bottomBox {
+        width: auto;
+    }
+}
