@@ -1,11 +1,4 @@
-const storedNotes = JSON.parse(localStorage.getItem('notas'));
-const defaultNotes = [
-  { body: "Mi Primera Nota" },
-  { body: "Esta es una nota larga que ocupa más de una línea" },
-  { body: "Otra nota de ejemplo" },
-  { body: "Última nota de ejemplo" },
-];
-let notes = storedNotes.length ? storedNotes : defaultNotes.slice();
+const notes = JSON.parse(localStorage.getItem('notas'));
 
 function startNote(note) {
   const div = document.createElement("div");
@@ -15,7 +8,7 @@ function startNote(note) {
   p.textContent = note.body;
   
   const button = document.createElement("button");
-  button.textContent = "Delete";
+  button.textContent = "Borrar";
 
   function handleClick() {
     deleteNote(note);
@@ -46,8 +39,10 @@ function deleteNote(note) {
 }
   
 function createNote(body) {
-  notes.push({ body });
-  savedData();
+  if (body !== "") {
+    notes.push({ body });
+    savedData();
+  }
 }
   
 function noteSubmit(event) {
