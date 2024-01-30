@@ -49,12 +49,10 @@ function createNote(body) {
 }
   
 function noteSubmit(event) {
-  event.preventDefault();
   const form = event.target;
   const body = form.elements.note.value;
   createNote(body);
   showNotes();
-  form.reset();
 }
 
 function savedData() {
