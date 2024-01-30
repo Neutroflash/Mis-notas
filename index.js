@@ -13,6 +13,7 @@ function startNote(note) {
   function handleClick() {
     deleteNote(note);
     showNotes();
+    console.log("Funciona el click")
   }
   button.addEventListener('click', handleClick);
   
@@ -35,12 +36,14 @@ function showNotes() {
 function deleteNote(note) {
   const noteIndex = notes.indexOf(note);
   notes.splice(noteIndex, 1);
+  console.log("Nota Borrada")
   savedData();
 }
   
 function createNote(body) {
   if (body !== "") {
     notes.push({ body });
+    console.log("Nota creada")
     savedData();
   }
 }
